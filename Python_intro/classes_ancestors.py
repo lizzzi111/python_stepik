@@ -1,10 +1,7 @@
 import sys
-
 data = {}
 exs = []
 for_output = []
-
-
 def find_ancestor(ex, target_ancestor):
     global data
     for ancestor in data[ex]:
@@ -16,30 +13,27 @@ def find_ancestor(ex, target_ancestor):
             continue
     return False
 
-
-def read_user_input(file_name_given):
+def read_user_input(file_name):
     global data, exs, for_output
-
-    if file_name_given:
-        inf = open(file_name_given)
+    if file_name:
+        inf = open(file_name)
     else:
         inf = sys.stdin
 
     n = int(inf.readline())
     while n > 0:
         line = inf.readline().rstrip()
-        if ':' in line:  # есть предки
+        if ':' in line:
             ex, ancestry = map(str, line.split(':'))
             ex = ex.rstrip()
             ancestors = ancestry.strip().split(' ')
-        else:  # нет предков
+        else:
             ex = line
             ancestors = []
         if ex not in data:
             data[ex] = []
         data[ex].extend(ancestors)
         n -= 1
-
 
     m = int(inf.readline())
     exs = []

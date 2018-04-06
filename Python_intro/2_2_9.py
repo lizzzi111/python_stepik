@@ -1,7 +1,7 @@
 from simplecrypt import encrypt, decrypt
 import pandas as pd
 
-folder = "/Users/lizzzi111/Downloads"
+folder = "."
 with open(f"{folder}/encrypted.bin", "rb") as inp:
     encrypted = inp.read()
 passwords = pd.read_table(f"{folder}/passwords.txt", header=None)

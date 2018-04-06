@@ -1,4 +1,4 @@
-dir = "/Users/lizzzi111/Library/Mobile Documents/com~apple~CloudDocs/Coursera/python_stepik"
+dir = "./python_stepik"
 import os
 
 with open('result.txt', 'a') as f:
